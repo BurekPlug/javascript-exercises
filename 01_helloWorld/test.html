@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+  function camelize (word) {
+    let wordArray = word.split("");
+    for (let idx = 0; wordArray.findIndex(item => item == "-") != -1; idx++)
+    {
+        idx = wordArray.findIndex(item => item == "-");
+        wordArray.splice(idx,1) 
+        wordArray[idx]= wordArray[idx].toUpperCase();
+    }
+    return wordArray.join("");
+  }
+
+  function filterRange (array, a, b) {
+    return array.filter(elem => (elem >= a && elem < b));
+  }
+
+  function filterRangeInPlace (array, a, b) {
+    for (let elem=0; elem <array.length; elem++)  {
+      console.log("current elem: " + elem )
+      console.log("array[elem] : " + array[elem] )
+      if ((array[elem]< a || array[elem] > b))
+      {
+        console.log("splicing!")
+        array.splice(elem, 1);
+        console.log("current array: " + array)
+        elem = elem-1;
+      }
+    }
+  }
+
+function copySorted(array)
+{
+  let newArr = array.slice();
+  newArr.sort();
+  return newArr;
+}
+
+
+//camelize("test-string-string");
+/*const ages = [32, 33, 16, 40];
+filterRange(ages,17,35)
+
+let arr = [5, 3, 8, 1];
+filterRangeInPlace(arr, 2, 5); 
+console.log(arr);*/
+
+//let arr = [5, 2, 1, -10, 8];
+
+//arr.sort((a,b) => b-a);
+
+  // Check if next idx is bigger
+    // change the order
+    // reset the index to the beginnig
+  // if it reaches the end-> Break;
+
+//console.log( arr ); // 8, 5, 2, 1, -10
+
+/*let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+
+console.log( sorted ); // CSS, HTML, JavaScript
+console.log( arr ); // HTML, JavaScript, CSS (no changes)*/
+
+function shuffle (array) {
+  let newArr = arr.slice();
+  console.log(Math.random()*10-5);  
+  newArr.sort((a,b) => ((Math.random()*10) - 5))
+  arr = newArr;
+}
+
+/*let arr = [1, 2, 3];
+
+shuffle(arr);
+// arr = [3, 2, 1]
+console.log(arr);
+shuffle(arr);
+// arr = [2, 1, 3]
+console.log(arr);
+shuffle(arr);
+console.log(arr);
+// arr = [3, 1, 2]
+// ...*/
+
+function unique(arr) {
+  /* your code */
+  // loop through array via idx
+    //loop trhpugh array via nidx
+      //if same element->delete
+
+  let narr = arr.slice();
+  for (let idx = 0; idx < narr.length; idx++)
+  {
+    for (let nidx = 0; nidx < narr.length; nidx++)
+    {
+      if (idx != nidx && narr[idx] === narr[nidx])
+      {
+        narr.splice(nidx,1);
+        nidx--;
+      }
+    }
+  }
+  return narr;
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+console.log( unique(strings) ); // Hare, Krishna, :-O
+
+</script>
+
+</body>
+</html>
+<!doctype html>
+
+
