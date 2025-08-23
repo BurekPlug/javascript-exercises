@@ -6,6 +6,8 @@ const reverseString = function(input) {
         resultString += inputArr[idx];
     }
     return resultString;
+
+    //return input.split("").reverse().join("");
 };
 
 // Do not edit below this line
