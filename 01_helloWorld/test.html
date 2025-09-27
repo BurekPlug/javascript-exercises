@@ -14,9 +14,9 @@ let users = [
   {id: 'pete', name: "Pete Peterson", age: 31},
 ];
 
-let usersById = groupById(users);
+/*let usersById = groupById(users);
 
-/*
+
 // after the call we should have:
 
 usersById = {
@@ -26,7 +26,7 @@ usersById = {
 }
 */
 
-function groupById(members) {
+/*function groupById(members) {
 
   
   return members.reduce(subGroup, {});
@@ -40,7 +40,56 @@ function subGroup (MainObj, member) {
   return MainObj;
 }
 
-console.log(usersById);
+console.log(usersById);*/
+
+
+
+const palindromes = function (text) {
+    //create a single string with pure chars
+    partStr = text.split(" ")
+    let singString = partStr.join("");
+    console.log("prepared String: " + singString)
+
+    partStr = singString.split("!")
+    singString = partStr.join("");
+    console.log("prepared String: " + singString)
+
+    partStr = singString.split("?")
+    singString = partStr.join("");
+    console.log("prepared String: " + singString)
+
+    partStr = singString.split(",")
+    singString = partStr.join("");
+    console.log("prepared String: " + singString)
+    
+    partStr = singString.split(".")
+    singString = partStr.join("");
+    console.log("prepared String: " + singString)
+
+    singString = singString.toUpperCase();
+    console.log("prepared String: " + singString)
+
+    console.log("length of singString: " + singString.length)
+    console.log("length of singString/2: " + (singString.length/2))
+    //test the string
+    for (let i = 0; i < (singString.length/2-1); i++)
+    {
+        console.log("i = "+ i + " : " + singString[i])
+        console.log("i = -"+ i + " : " + singString[singString.length-1-i])
+        if (singString[i] === singString[singString.length-1-i])
+            {console.log("continue");
+            continue;}
+        else
+            {console.log("false");
+              return false;}
+    }
+
+    return true;
+};
+
+text = "racecar!"
+
+palindromes(text);
 
 </script>
 
