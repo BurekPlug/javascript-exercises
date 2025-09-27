@@ -43,7 +43,7 @@ function subGroup (MainObj, member) {
 console.log(usersById);*/
 
 
-
+/*
 const palindromes = function (text) {
     //create a single string with pure chars
     partStr = text.split(" ")
@@ -90,6 +90,32 @@ const palindromes = function (text) {
 text = "racecar!"
 
 palindromes(text);
+*/
+const people = [
+      {
+        name: "Carly",
+        yearOfBirth: 1942,
+        yearOfDeath: 1970,
+      },
+      {
+        name: "Ray",
+        yearOfBirth: 1962,
+        yearOfDeath: 2011,
+      },
+      {
+        name: "Jane",
+        yearOfBirth: 1912,
+        yearOfDeath: 1941,
+      },
+    ]
+
+const findTheOldest = function(persons) {
+    //add age
+    persons.map(((val) => val.age = val.yearOfDeath - val.yearOfBirth));
+    return persons.sort((a,b) => b.age - a.age);
+}; 
+
+console.log(findTheOldest(people));
 
 </script>
 
